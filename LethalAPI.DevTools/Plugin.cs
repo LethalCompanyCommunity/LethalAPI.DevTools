@@ -54,6 +54,6 @@ public class Plugin : LethalAPI.Core.Features.Plugin<Config>
         }
 
         Instance = this;
-        Log.Info($"Started plugin &3LethalAPI.DevTools &gv1.0.0 &rby &7LethalAPI Modding Community&r.{(this.Config.Debug ? " [&2Debug&r]" : string.Empty)}");
+        Log.Debug($"Started {this.Name} successfully.");
     }
 }
