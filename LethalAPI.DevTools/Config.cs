@@ -14,7 +14,6 @@ using LethalAPI.Core.Interfaces;
 /// <summary>
 /// The main config class.
 /// </summary>
-// ReSharper disable ClassNeverInstantiated.Global
 public class Config : IConfig
 {
     /// <inheritdoc />
