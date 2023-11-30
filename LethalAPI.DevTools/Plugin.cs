@@ -5,19 +5,11 @@
 // </copyright>
 // -----------------------------------------------------------------------
 
-// ReSharper disable UnusedAutoPropertyAccessor.Global
 namespace LethalAPI.DevTools;
-
-// ReSharper disable MemberCanBePrivate.Global
-// ReSharper disable FieldCanBeMadeReadOnly.Global
-// ReSharper disable UnusedType.Global
-#pragma warning disable SA1401 // Field should be made private.
-#pragma warning disable SA1402 // File can only contain a single type.
 
 using System;
 
 using HarmonyLib;
-
 using LethalAPI.Core;
 
 /// <summary>
@@ -39,7 +31,7 @@ public class Plugin : LethalAPI.Core.Features.Plugin<Config>
     /// <remarks>
     ///     This is optional. A custom implementation can replace this.
     /// </remarks>
-    public static Harmony Harmony => new("LethalAPI.DevTools");
+    public static Harmony Harmony => new("com.LethalAPI.DevTools");
 
     /// <inheritdoc />
     public override string Name => "LethalAPI.DevTools";
@@ -51,7 +43,7 @@ public class Plugin : LethalAPI.Core.Features.Plugin<Config>
     public override string Author => "LethalAPI Modding Community";
 
     /// <inheritdoc />
-    public override Version Version => new(0, 0, 1);
+    public override Version Version => new(1, 0, 0);
 
     /// <inheritdoc />
     public override void OnEnabled()
@@ -62,6 +54,6 @@ public class Plugin : LethalAPI.Core.Features.Plugin<Config>
         }
 
         Instance = this;
-        Log.Info($"Started plugin LethalAPI.DevTools v{this.Version} by LethalAPI Modding Community.");
+        Log.Info($"Started plugin &3LethalAPI.DevTools &gv1.0.0 &rby &7LethalAPI Modding Community&r.{(this.Config.Debug ? " [&2Debug&r]" : string.Empty)}");
     }
 }
