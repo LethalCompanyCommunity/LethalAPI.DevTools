@@ -59,6 +59,9 @@
     <PackageReference Include="YamlDotNet" Version="13.7.1" ExcludeAssets="runtime" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" ExcludeAssets="runtime" />
     <PackageReference Include="HarmonyX" Version="2.10.2" ExcludeAssets="runtime" />
+    <PackageReference Include="System.Memory" Version="4.5.5" ExcludeAssets="runtime" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" ExcludeAssets="runtime" />
+    <PackageReference Include="prometheus-net" Version="8.1.0" ExcludeAssets="runtime" />
 </ItemGroup>
 
 <ItemGroup>
