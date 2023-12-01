@@ -49,7 +49,7 @@ public static class MethodMetrics
         builder.AppendLine("&6" + $"{DateTime.Now:h:mm.ss tt}".PadBoth(39));
         builder.AppendLine($"&a=======================================&r");
         builder.AppendLine("\n" + $"[&a=======[ &3{"Invocation Count".PadBoth(16)}&a ]=======&r]");
-        builder.AppendLine($"{"[Type]".PadBoth(typePadding)}.{"[Method]".PadBoth(methodPadding)} [Invocations] [Average Ticks Per]");
+        builder.AppendLine($"{"[Type]".PadBoth(typePadding)}.{"[Method]".PadBoth(methodPadding)}  [Invocations] [Average Ticks Per]");
 
         foreach (AsRef<ProfileMethodPatch.ProfiledMethodInfo> asRefInfo in sortedDict)
         {
