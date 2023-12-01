@@ -23,4 +23,10 @@ public class Config : IConfig
     /// <inheritdoc />
     [Description("Indicates whether debug logs should be output.")]
     public bool Debug { get; set; } = false;
+
+    /// <summary>
+    /// Gets or sets a value indicating whether or not the profiler should be enabled.
+    /// </summary>
+    [Description($"Indicates whether or not the profiler should be enabled.")]
+    public bool EnabledProfiling { get; set; } = true;
 }

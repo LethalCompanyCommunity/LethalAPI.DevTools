@@ -9,6 +9,7 @@
 // -----------------------------------------------------------------------
 
 // ReSharper disable MemberCanBePrivate.Global
+#pragma warning disable SA1401 // Field should be private
 namespace LethalAPI.DevTools.Profiler.Patches;
 
 using System;
@@ -33,6 +34,11 @@ using static HarmonyLib.AccessTools;
 public static class ProfileMethodPatch
 {
     /// <summary>
+    /// Gets or sets a value indicating whether indicates whether the profiler is disabled.
+    /// </summary>
+    public static bool DisableProfiler = false;
+
+    /// <summary>
     /// The maximum number of patches to profile.
     /// </summary>
     private const int MaxPatches = 8000;
@@ -42,11 +48,6 @@ public static class ProfileMethodPatch
     private static ProfiledMethodInfo[] profilerInfos = new ProfiledMethodInfo[MaxPatches];
 
     private static HashSet<int>? optimizedMethods;
-
-    /// <summary>
-    /// Gets or sets a value indicating whether indicates whether the profiler is disabled.
-    /// </summary>
-    internal static bool DisableProfiler { get; set; }
 
     /// <summary>
     /// Tracks a method and applies the profiling methods.
@@ -327,7 +328,7 @@ public static class ProfileMethodPatch
         public uint TotalMemory;
 
         /// <summary>
-        /// Gets the size of the (i have no idea).
+        /// Gets the size of the struct.
         /// </summary>
         private const int MySize = 4 + 4 + 4 + 4;
 

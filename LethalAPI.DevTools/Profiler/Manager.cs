@@ -33,6 +33,8 @@ public class Manager
     public Manager()
     {
         Instance = this;
+        if(Plugin.Instance.Config.EnabledProfiling)
+            EnableProfiler();
     }
 
     /// <summary>
@@ -97,6 +99,8 @@ public class Manager
     /// </summary>
     public static void EnableProfiler()
     {
+        Log.Debug("Enabling Profiler.");
+        DateTime startTime = DateTime.UtcNow;
         if (Patched > 0)
         {
             ProfileMethodPatch.DisableProfiler = false;
@@ -140,6 +144,8 @@ public class Manager
         }
 
         Log.Info("Failed to patch " + failed + " methods");
+        TimeSpan totalTime = DateTime.UtcNow - startTime;
+        Log.Info($"Profiler Total Setup Time: {totalTime.Seconds}.{totalTime.Milliseconds}s");
     }
 
     // ReSharper disable IdentifierTypo
